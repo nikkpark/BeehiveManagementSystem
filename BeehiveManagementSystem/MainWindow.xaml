@@ -1,0 +1,35 @@
+﻿<Window x:Class="BeehiveManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeehiveManagementSystem"
+        mc:Ignorable="d"
+        Title="Beehive Management System" Height="325" Width="625">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Job Assignments" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20,0" FontSize="18px"/>
+        <Label Content="Queen's Report"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20,0" FontSize="18px"/>
+
+        <TextBox x:Name="statusReport" IsReadOnly="True" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="20"/>
+
+        <Button Content="Work the next shift" Grid.Row="2" Margin="20" FontSize="18px" Click="WorkShift_Click"/>
+        
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="20">
+            <ComboBox x:Name="jobSelector" FontSize="18px" SelectedIndex="0" Margin="0,0,0,20">
+                <ListBoxItem Content="Nectar Collector"/>
+                <ListBoxItem Content="Honey Manufacturer"/>
+                <ListBoxItem Content="Egg Care"/>
+            </ComboBox>
+            <Button Content="Assign this job to a bee" FontSize="18px" Click="AssignJob_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
